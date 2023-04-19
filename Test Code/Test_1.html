@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scatterplot Selector</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-1.58.4-gl2d3.min.js"></script>
+</head>
+<body>
+	<h1>Scatterplot Selector</h1>
+	<div class="dropdown">
+		<label for="graph-select">Select a Graph:</label>
+		<select id="graph-select">
+			<option value="goals">Goals</option>
+			<option value="assists">Assists</option>
+			<option value="shots">Shots on Target</option>
+		</select>
+	</div>
+	<div id="scatterplot-container"></div>
+	<script src="script.js"></script>
+</body>
+</html>
