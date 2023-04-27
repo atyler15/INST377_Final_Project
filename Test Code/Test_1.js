@@ -1,60 +1,38 @@
-var goalsTrace = {
-	x: ['Season 1', 'Season 2', 'Season 3', 'Season 4', 'Season 5', 'Season 6', 'Season 7'],
-	y: [5, 10, 15, 20, 25, 30, 35],
-	mode: 'lines+markers',
-	type: 'scatter',
-	line: {
-		color: 'blue',
-		width: 3
-	},
-	marker: {
-		size: 12,
-		color: 'blue'
-	},
-	name: 'Goals'
-};
-var assistsTrace = {
-	x: ['Season 1', 'Season 2', 'Season 3', 'Season 4', 'Season 5', 'Season 6', 'Season 7'],
-	y: [3, 7, 10, 15, 18, 20, 22],
-	mode: 'lines+markers',
-	type: 'scatter',
-	line: {
-		color: 'green',
-		width: 3
-	},
-	marker: {
-		size: 12,
-		color: 'green'
-	},
-	name: 'Assists'
-};
-var shotsTrace = {
-	x: ['Season 1', 'Season 2', 'Season 3', 'Season 4', 'Season 5', 'Season 6', 'Season 7'],
-	y: [20, 22, 25, 30, 28, 27, 30],
-	mode: 'lines+markers',
-	type: 'scatter',
-	line: {
-		color: 'red',
-		width: 3
-	},
-	marker: {
-		size: 12,
-		color: 'red'
-	},
-	name: 'Shots on Target'
-};
-var layout = {
-	title: 'Player Statistics',
-	xaxis: {
-		title: 'Season',
-		showgrid: false,
-		zeroline: false
-	},
-	yaxis: {
-		title: 'Value',
-		showline: false
-	}
-};
-var data = [goalsTrace, assistsTrace, shotsTrace];
+// Get the canvas element and set its width and height
+const canvas = document.createElement("canvas");
+canvas.width = 800;
+canvas.height = 400;
 
-// Initialize
+// Append the canvas to the chart container
+const chartContainer = document.getElementById("chart-container");
+chartContainer.appendChild(canvas);
+
+// Create a new chart object
+const ctx = canvas.getContext("2d");
+const chart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"],
+    datasets: [
+      {
+        label: "Goals",
+        data: [15, 22, 30, 27, 35],
+        borderColor: "red",
+        backgroundColor: "rgba(255, 0, 0, 0.2)",
+        borderWidth: 2,
+        fill: true,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  },
+});

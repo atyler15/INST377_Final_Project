@@ -1,22 +1,5 @@
-h1 {
-	text-align: center;
-}
-.dropdown {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 20px;
-}
-label {
-	font-size: 18px;
-	margin-right: 10px;
-}
-select {
-	font-size: 16px;
-	padding: 5px 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-}
-#scatterplot-container {
-	display: flex;
-	justify-content: center;
+#chart-container {
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
 }
