@@ -1,36 +1,20 @@
-import Chart from 'chart.js/auto'
 
-(async function() {
-var xyValues = [
-  {x:50, y:7},
-  {x:60, y:8},
-  {x:70, y:8},
-  {x:80, y:9},
-  {x:90, y:9},
-  {x:100, y:9},
-  {x:110, y:10},
-  {x:120, y:11},
-  {x:130, y:14},
-  {x:140, y:14},
-  {x:150, y:15}
-];
 
-new Chart(
-  document,getElementById()"myChart"),
-  {
-  type: "scatter",
-  data: {
-    datasets: [{
-      pointRadius: 4,
-      pointBackgroundColor: "rgb(0,0,255)",
-      data: xyValues
-    }]
-  },
-  options: {
-    legend: {display: false},
-    scales: {
-      xAxes: [{ticks: {min: 40, max:160}}],
-      yAxes: [{ticks: {min: 6, max:16}}],
-    }
-  }
-});
+
+const url = 'https://football-pro.p.rapidapi.com/api/v2.0/players/1743?include=stats&seasons=16036&tz=Europe%2FAmsterdam';
+const options = {
+	method: 'GET',
+	headers: {
+		'content-type': 'application/octet-stream',
+		'X-RapidAPI-Key': 'bf24376c62msh6ba0d8cf5348847p1f212cjsn51d38164dcc0',
+		'X-RapidAPI-Host': 'football-pro.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}

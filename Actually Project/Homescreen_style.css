@@ -53,8 +53,6 @@ h1 {
   text-align: center;
 }
 
-
-
 .row {
 	display: flex;
 	margin-left: -5px;
@@ -117,4 +115,14 @@ td:first-child {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	color: white;
+	text-align: center;
 }

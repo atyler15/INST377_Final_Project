@@ -68,29 +68,14 @@ h1 {
 
 .timeline-item:before {
 
-.dropdown {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
 }
-label {
-  font-size: 20px;
-  margin-right: 10px;
-}
-select {
-  font-size: 18px;
-	padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.scatterplot-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 50px;
-}
-#scatterplot-goals, #scatterplot-assists, #scatterplot-yellow-cards, #scatterplot-red-cards {
-  width: 500px;
-  height: 400px;
-  margin: 10px;
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: red;
+	color: white;
+	text-align: center;
 }
