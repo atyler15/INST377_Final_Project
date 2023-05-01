@@ -43,14 +43,15 @@ const ronaldo_20 = 'https://api-football-v1.p.rapidapi.com/v3/players?id=874&sea
 const ronaldo_21 = 'https://api-football-v1.p.rapidapi.com/v3/players?id=874&season=2021';
 const ronaldo_22 = 'https://api-football-v1.p.rapidapi.com/v3/players?id=874&season=2022';
 
+/* Ran out of api call it will cost money to use
 const options = {
   method: 'GET',
   headers: {
     'content-type': 'application/octet-stream',
-    'X-RapidAPI-Key': 'bf24376c62msh6ba0d8cf5348847p1f212cjsn51d38164dcc0',
+    'X-RapidAPI-Key': '24376c62msh6ba0d8cf5348847p1f212cjsn51d38164d0',
     'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
   }
-};
+};*/
 
 async function getPlayerStats() {
   const ctx = document.getElementById('myChart');
