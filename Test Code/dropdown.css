@@ -1,0 +1,17 @@
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+h1 {
+	font-size: 32px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+select {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+#graph-container {
+	margin-top: 40px;
+}
