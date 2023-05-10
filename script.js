@@ -1,5 +1,5 @@
 /*Messi (154) URLs  (2004-2022)*/
-
+/*Both chunks of code below calls the correct api link to get Messi and Ronaldo data for the correct year*/
 const messi_04 = 'https://api-football-v1.p.rapidapi.com/v3/players?id=154&season=2004';
 const messi_05 = 'https://api-football-v1.p.rapidapi.com/v3/players?id=154&season=2005';
 const messi_06 = 'https://api-football-v1.p.rapidapi.com/v3/players?id=154&season=2006';
@@ -53,13 +53,14 @@ const options = {
   }
 };*/
 
+
 async function getPlayerStats() {
   const ctx = document.getElementById('myChart');
   /*List of Goal Values  */
   let goals_messi = [0, 0];
   let goals_cr7 = [];
 
-  /*Getting Messi Goal Values*/
+  /*Getting Messi Goal Values from JSON from API calls*/
   const messi_response1 = await fetch(messi_04, options);
   const messi_response2 = await fetch(messi_05, options);
   const messi_response3 = await fetch(messi_06, options);
@@ -105,7 +106,7 @@ async function getPlayerStats() {
   console.log(result2);
 */
 
-  /*Pushing Goals to List*/
+  /*Pushing Goals to List to generate graphs*/
   const messi_goalsData1 = messi_result1.response[0].statistics[0].goals.total;
   goals_messi.push(messi_goalsData1);
   const messi_goalsData2 = messi_result2.response[0].statistics[0].goals.total;
@@ -144,34 +145,12 @@ async function getPlayerStats() {
   goals_messi.push(messi_goalsData18);
   const messi_goalsData19 = messi_result19.response[0].statistics[0].goals.total;
   goals_messi.push(messi_goalsData19);
-  /* Most Likely Won't Need
-  const playerNameData1 = result1.response[0].player.name;
-  const goalsData1 = result1.response[0].statistics[0].goals.total;
-  const assistsData1 = result1.response[0].statistics[0].goals.assists;
-  const playerNameElement1 = document.getElementById('player-name1');
-  const goalsElement1 = document.getElementById('goals1');
-  const assistsElement1 = document.getElementById('assists1');
-  playerNameElement1.innerHTML = `Player Name: ${playerNameData1}`;
-  goalsElement1.innerHTML = `Goals: ${goalsData1}`;
-  assistsElement1.innerHTML = `Assists: ${assistsData1}`;
-  goals_messi.push(goalsData1);
 
-  const playerNameData2 = result2.response[0].player.name;
-  const goalsData2 = result2.response[0].statistics[0].goals.total;
-  const assistsData2 = result2.response[0].statistics[0].goals.assists;
-  const playerNameElement2 = document.getElementById('player-name2');
-  const goalsElement2 = document.getElementById('goals2');
-  const assistsElement2 = document.getElementById('assists2');
-  playerNameElement2.innerHTML = `Player Name: ${playerNameData2}`;
-  goalsElement2.innerHTML = `Goals: ${goalsData2}`;
-  assistsElement2.innerHTML = `Assists: ${assistsData2}`;
-  goals_messi.push(goalsData2);
-  */
   console.log(goals_messi);
   /*console.log(goals_cr7); 874*/
 
 
-
+/*Create chart to display on webiste*/
   new myChart(ctx, {
     type: 'line',
     data: {
@@ -194,3 +173,6 @@ async function getPlayerStats() {
   });
 }
 getPlayerStats();
+
+/*The above code can be duplicated and changed to get any players stats and different stats such
+as matchs players and assists*/

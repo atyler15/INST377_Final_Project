@@ -117,12 +117,25 @@ td:first-child {
   visibility: visible;
 }
 
-.footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: black;
-	color: white;
-	text-align: center;
+footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #666B6C;
 }
